@@ -58,4 +58,5 @@
   width: min(60vw, 60vh);
   height: min(60vw, 60vh);
   box-shadow: 0 0 10px 2px white;
+  border-radius: 10px;
 }
