@@ -1,3 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@700&family=Zen+Dots&display=swap');
+/* 
+font-family: 'Kanit', sans-serif;
+font-family: 'Zen Dots', cursive; */
+
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap');
+/* font-family: 'Caveat', cursive; */
+
+@import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
+/* font-family: 'Sacramento', cursive; */
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -6,7 +17,7 @@
 }
 
 .mainbg {
-  background-color: #212121;
+  background-color: black;
   width: 100%;
   height: 100vh;
   position: absolute;
@@ -23,12 +34,19 @@
   border-top-right-radius: 10px;
   border-bottom-right-radius: 100px;
   height: 40px;
-  animation: mainbardown 0.5s cubic-bezier(0, 1.38, 1, 1);
+  animation: mainbarleft 0.5s cubic-bezier(0, 1.38, 1, 1);
+  text-align: right;
+  padding-right: 10vw;
+  font-size: 30px;
+  letter-spacing: 5px;
+  color: #212121;
+  font-family: 'Zen Dots', cursive;
+  box-shadow: 0px 2px 2px 8px blue;
 }
 
-@keyframes mainbardown {
+@keyframes mainbarleft {
   0% {
-    left: -50vh;
+    left: -50vw;
   }
 }
 
@@ -41,12 +59,19 @@
   border-top-left-radius: 100px;
   border-bottom-left-radius: 10px;
   height: 40px;
-  animation: mainbardown 0.5s cubic-bezier(0, 1.38, 1, 1);
+  animation: mainbarright 0.5s cubic-bezier(0, 1.38, 1, 1);
+  text-align: left;
+  padding-left: 10vw;
+  font-size: 30px;
+  letter-spacing: 5px;
+  color: #212121;
+  font-family: 'Caveat', cursive;
+  box-shadow: 0px 2px 2px 8px blue;
 }
 
-@keyframes mainbarup {
+@keyframes mainbarright {
   0% {
-    bottom: -30vh;
+    right: -50vw;
   }
 }
 
@@ -57,6 +82,27 @@
   transform: translate(-50%, -50%);
   width: min(60vw, 60vh);
   height: min(60vw, 60vh);
-  box-shadow: 0 0 10px 2px white;
+  box-shadow: 0 0 10px 2px #3500d3;
   border-radius: 10px;
+  background-color: #afd275;
+}
+
+.first-options-bar1 {
+  width: 96%;
+  height: 30%;
+  margin: 2.5% 2%;
+  background-color: #1f2833;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition-duration: 0.3s;
+  font-family: 'Sacramento', cursive;
+  color: white;
+  font-size: min(5vh, 5vw);
+}
+
+.first-options-bar1:hover {
+  background-color: #0b0c10;
 }
