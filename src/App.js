@@ -6,8 +6,21 @@ export default function App() {
 
   return (
     <div className="mainbg">
-      <div className="main-style-bar-up">SELECT</div>
-      <div className="main-style-bar-down">Let's Play..</div>
+      <div className="homebtn" onClick={() => setopt1('d')}>
+        Home
+      </div>
+      <div className="main-style-bar-up">
+        {opt1 === 'd' && <span>SELECT</span>}
+        {opt1 === 'a' && <span>Choose Correctly</span>}
+        {opt1 === 'b' && <span>Choose Correctly</span>}
+        {opt1 === 'c' && <span>Choose Correctly</span>}
+      </div>
+      <div className="main-style-bar-down">
+        {opt1 === 'd' && <span>Let's Play..</span>}
+        {opt1 === 'a' && <span>Fibonacci</span>}
+        {opt1 === 'b' && <span>Arithmetic</span>}
+        {opt1 === 'c' && <span>Geometric</span>}
+      </div>
       {opt1 === 'd' && (
         <div className="center-box">
           <div onClick={() => setopt1('a')} className="first-options-bar1">
@@ -21,7 +34,19 @@ export default function App() {
           </div>
         </div>
       )}
-      {opt1 === 'a' && <div className="center-box"></div>}
+      {opt1 === 'a' && (
+        <div className="center-box">
+          <div className="small-box"></div>
+          <div className="small-box"></div>
+          <div className="small-box"></div>
+          <div className="small-box"></div>
+          <div className="small-box"></div>
+          <div className="small-box"></div>
+          <div className="small-box"></div>
+          <div className="small-box"></div>
+          <div className="small-box"></div>
+        </div>
+      )}
     </div>
   );
 }

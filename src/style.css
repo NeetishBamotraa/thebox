@@ -9,6 +9,9 @@ font-family: 'Zen Dots', cursive; */
 @import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
 /* font-family: 'Sacramento', cursive; */
 
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+/* font-family: 'Fredoka One', cursive; */
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -23,6 +26,19 @@ font-family: 'Zen Dots', cursive; */
   position: absolute;
   top: 0;
   left: 0;
+}
+
+.homebtn {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  font-size: 30px;
+  background-color: white;
+  padding: 5px 20px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-family: 'Fredoka One', cursive;
+  box-shadow: 0 0 2px 6px #afd275;
 }
 
 .main-style-bar-up {
@@ -85,12 +101,16 @@ font-family: 'Zen Dots', cursive; */
   box-shadow: 0 0 10px 2px #3500d3;
   border-radius: 10px;
   background-color: #afd275;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  /* padding: 1% 0; */
 }
 
 .first-options-bar1 {
   width: 96%;
   height: 30%;
-  margin: 2.5% 2%;
   background-color: #1f2833;
   border-radius: 5px;
   cursor: pointer;
@@ -103,6 +123,23 @@ font-family: 'Zen Dots', cursive; */
   font-size: min(5vh, 5vw);
 }
 
-.first-options-bar1:hover {
+.first-options-bar1:hover,
+.small-box:hover {
   background-color: #0b0c10;
+}
+
+.small-box {
+  width: 30%;
+  height: 30%;
+  margin: 0 1%;
+  background-color: #2e1114;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition-duration: 0.3s;
+  font-family: 'Sacramento', cursive;
+  color: white;
+  font-size: min(5vh, 5vw);
 }
