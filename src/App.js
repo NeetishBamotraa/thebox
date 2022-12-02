@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './style.css';
 
 export default function App() {
-  const [opt1, setopt1] = useState('p');
+  const [opt1, setopt1] = useState('d');
   const [check, setcheck] = useState(-1);
   const [correctopt, setcorrectopt] = useState(0);
   const [fib, setfib] = useState(0);
@@ -11,6 +11,8 @@ export default function App() {
 
   useEffect(() => {
     let inter = null;
+    let secinter = null;
+    let checktrue = false;
     if (window) {
       if (check !== -1) {
         [0, 1, 2, 3, 4, 5, 6, 7, 8].map(
@@ -38,6 +40,12 @@ export default function App() {
         }, 1000);
 
         if (check === correctopt) {
+          let yy = opt1;
+          setopt1('p');
+          secinter = setInterval(() => {
+            setopt1(yy);
+          }, 1200);
+
           //update based on algo
         }
       }
@@ -45,6 +53,7 @@ export default function App() {
 
     return () => {
       clearInterval(inter);
+      clearInterval(secinter);
     };
   }, [check, correctopt]);
 
@@ -92,10 +101,12 @@ export default function App() {
           ))}
         </div>
       )}
-      {opt1 === 'p' && <div className="center-box">
-        <div className='processbar1'></div>
-        <div className='processbar2'></div>
-        </div>}
+      {opt1 === 'p' && (
+        <div className="center-box">
+          <div className="processbar1"></div>
+          <div className="processbar2"></div>
+        </div>
+      )}
     </div>
   );
 }
