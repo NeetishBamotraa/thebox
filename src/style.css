@@ -152,9 +152,9 @@ font-family: 'Zen Dots', cursive; */
   transform: translate(-50%, -50%);
   width: 50%;
   height: 20px;
-  background-color: red;
+  background-color: black;
   animation: shright 1s infinite alternate ease-in-out;
-  opacity: 0.5;
+  opacity: 1;
 }
 .processbar2 {
   position: absolute;
@@ -162,10 +162,12 @@ font-family: 'Zen Dots', cursive; */
   left: 50%;
   transform: translate(-50%, -50%);
   width: 50%;
-  height: 25px;
-  background-color: green;
-  animation: shright 1s 0.5s infinite alternate ease-in-out;
-  opacity: 0.5;
+  height: 30px;
+  background-color: #3500d3;
+  animation: shright 1s 0.5s infinite alternate
+    cubic-bezier(0.89, 0.08, 0.13, 0.93);
+  border-radius: 10px;
+  opacity: 0.7;
 }
 
 @keyframes shright {
