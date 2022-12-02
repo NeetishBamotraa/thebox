@@ -1,8 +1,52 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './style.css';
 
 export default function App() {
-  const [opt1, setopt1] = useState('d');
+  const [opt1, setopt1] = useState('a');
+  const [check, setcheck] = useState(-1);
+  const [correctopt, setcorrectopt] = useState(0);
+  const [fib, setfib] = useState(0);
+  const [arth, setarth] = useState(0);
+  const [geo, setgeo] = useState(0);
+
+  useEffect(() => {
+    let inter = null;
+    if (window) {
+      if (check !== -1) {
+        [0, 1, 2, 3, 4, 5, 6, 7, 8].map(
+          (ele) =>
+            (document.getElementById(`small-box-${ele}`).style.backgroundColor =
+              '#2e1114')
+        );
+        if (check === correctopt) {
+          document.getElementById(`small-box-${check}`).style.backgroundColor =
+            'yellow';
+        } else {
+          document.getElementById(`small-box-${check}`).style.backgroundColor =
+            'red';
+        }
+
+        inter = setTimeout(() => {
+          [0, 1, 2, 3, 4, 5, 6, 7, 8].map(
+            (ele) =>
+              (document.getElementById(
+                `small-box-${ele}`
+              ).style.backgroundColor = '#2e1114')
+          );
+          console.log(check);
+          setcheck(-1);
+        }, 1000);
+
+        if (check === correctopt) {
+          //update based on algo
+        }
+      }
+    }
+
+    return () => {
+      clearInterval(inter);
+    };
+  }, [check, correctopt]);
 
   return (
     <div className="mainbg">
@@ -34,17 +78,18 @@ export default function App() {
           </div>
         </div>
       )}
-      {opt1 === 'a' && (
+      {opt1 !== 'd' && (
         <div className="center-box">
-          <div className="small-box"></div>
-          <div className="small-box"></div>
-          <div className="small-box"></div>
-          <div className="small-box"></div>
-          <div className="small-box"></div>
-          <div className="small-box"></div>
-          <div className="small-box"></div>
-          <div className="small-box"></div>
-          <div className="small-box"></div>
+          {[0, 1, 2, 3, 4, 5, 6, 7, 8].map((ele) => (
+            <div
+              id={`small-box-${ele}`}
+              onClick={() => setcheck(ele)}
+              className="small-box"
+              key={ele}
+            >
+              {ele}
+            </div>
+          ))}
         </div>
       )}
     </div>
