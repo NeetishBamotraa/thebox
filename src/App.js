@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './style.css';
 
 export default function App() {
-  const [opt1, setopt1] = useState('a');
+  const [opt1, setopt1] = useState('p');
   const [check, setcheck] = useState(-1);
   const [correctopt, setcorrectopt] = useState(0);
   const [fib, setfib] = useState(0);
@@ -92,6 +92,10 @@ export default function App() {
           ))}
         </div>
       )}
+      {opt1 === 'p' && <div className="center-box">
+        <div className='processbar1'></div>
+        <div className='processbar2'></div>
+        </div>}
     </div>
   );
 }
