@@ -153,7 +153,8 @@ font-family: 'Zen Dots', cursive; */
   width: 50%;
   height: 20px;
   background-color: black;
-  animation: shright 1s infinite alternate ease-in-out;
+  animation: shright 1s infinite alternate cubic-bezier(0.89, 0.08, 0.13, 0.93);
+  border-radius: 50px;
   opacity: 1;
 }
 .processbar2 {
