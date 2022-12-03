@@ -55,7 +55,7 @@ export default function App() {
                 `small-box-${ele}`
               ).style.backgroundColor = '#2e1114')
           );
-          console.log(check);
+          // console.log(check);
           setcheck(-1);
 
           if (check === correctopt) {
