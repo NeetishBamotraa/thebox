@@ -6,14 +6,30 @@ export default function App() {
   const [process, setprocess] = useState(0);
   const [check, setcheck] = useState(-1);
   const [correctopt, setcorrectopt] = useState(0);
-  const [fib, setfib] = useState(0);
+  const [fib, setfib] = useState(1);
+  const [fibprev, setfibprev] = useState(0);
   const [arth, setarth] = useState(0);
-  const [geo, setgeo] = useState(0);
+  const [arthd, setarthd] = useState(2);
+  const [geo, setgeo] = useState(1);
+  const [score, setscore] = useState(0);
+
+  const gotohome = () => {
+    setprocess(1);
+    setopt1('d');
+    setcheck(-1);
+    setcorrectopt(0);
+    setfib(0);
+    setarth(0);
+    setgeo(1);
+    setscore(0);
+  };
 
   useEffect(() => {
     let inter = null;
     if (window) {
       if (check !== -1) {
+        setprocess(0);
+
         [0, 1, 2, 3, 4, 5, 6, 7, 8].map(
           (ele) =>
             (document.getElementById(`small-box-${ele}`).style.backgroundColor =
@@ -27,6 +43,11 @@ export default function App() {
             'red';
         }
 
+        // console.log('fib--' + fib);
+        // console.log('geo--' + geo);
+        // console.log('arth--' + arth);
+        // console.log('correctopt--' + correctopt);
+
         inter = setTimeout(() => {
           [0, 1, 2, 3, 4, 5, 6, 7, 8].map(
             (ele) =>
@@ -38,6 +59,48 @@ export default function App() {
           setcheck(-1);
 
           if (check === correctopt) {
+            if (opt1 === 'a') {
+              let val1 = fib;
+              let val2 = fibprev;
+
+              setfib(val1 + val2);
+              setcorrectopt((val1 + val2) % 9);
+              setfibprev(val1);
+
+              let sc = score;
+
+              if (sc === 0) {
+                setscore(1);
+              } else {
+                setscore(Math.round(sc + sc * 1.13));
+              }
+            } else if (opt1 === 'b') {
+              let val = arth + arthd;
+              setarth(val);
+              setarthd(val % 9);
+              setcorrectopt(val % 9);
+
+              let sc = score;
+
+              if (sc === 0) {
+                setscore(1);
+              } else {
+                setscore(Math.round(sc + sc * 1.26));
+              }
+            } else if (opt1 === 'c') {
+              let val = geo * 131;
+              setgeo(val % 9);
+              setcorrectopt(val % 9);
+
+              let sc = score;
+
+              if (sc === 0) {
+                setscore(1);
+              } else {
+                setscore(Math.round(sc + sc * 1.51));
+              }
+            }
+
             setprocess(1);
           }
         }, 1000);
@@ -71,9 +134,10 @@ export default function App() {
 
   return (
     <div className="mainbg">
-      <div className="homebtn" onClick={() => setopt1('d')}>
+      <div className="homebtn" onClick={() => gotohome()}>
         Home
       </div>
+      {opt1 !== 'd' && <div className="score">Score: {score}</div>}
       <div className="main-style-bar-up">
         {opt1 === 'd' && <span>SELECT</span>}
         {opt1 === 'a' && <span>Choose Correctly</span>}

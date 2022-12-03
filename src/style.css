@@ -153,7 +153,8 @@ font-family: 'Zen Dots', cursive; */
   width: 50%;
   height: 20px;
   background-color: black;
-  animation: shright 0.5s infinite alternate cubic-bezier(0.89, 0.08, 0.13, 0.93);
+  animation: shright 0.5s infinite alternate
+    cubic-bezier(0.89, 0.08, 0.13, 0.93);
   border-radius: 50px;
   opacity: 1;
 }
@@ -178,4 +179,16 @@ font-family: 'Zen Dots', cursive; */
   100% {
     width: 10%;
   }
+}
+
+.score {
+  position: absolute;
+  left: 2vw;
+  bottom: 10vh;
+  padding: 5px 10px;
+  font-size: 30px;
+  color: white;
+  border-radius: 8px;
+  box-shadow: 0 0 10px 5px #3500d3;
+  font-family: 'Kanit', sans-serif;
 }
