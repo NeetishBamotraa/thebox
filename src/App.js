@@ -3,7 +3,6 @@ import './style.css';
 
 export default function App() {
   const [opt1, setopt1] = useState('d');
-  const [extra, setextra] = useState('d');
   const [process, setprocess] = useState(0);
   const [check, setcheck] = useState(-1);
   const [correctopt, setcorrectopt] = useState(0);
@@ -37,10 +36,11 @@ export default function App() {
           );
           console.log(check);
           setcheck(-1);
-          setprocess(0);
-        }, 1000);
 
-          
+          if (check === correctopt) {
+            setprocess(1);
+          }
+        }, 1000);
       }
     }
 
@@ -50,12 +50,23 @@ export default function App() {
   }, [check, correctopt]);
 
   useEffect(() => {
+    let proInt = null;
+    let extra = opt1;
     if (process === 1) {
-      setextra(opt1);
       setopt1('p');
-    } else if (process === 0) {
-      setopt1(extra);
+      proInt = setTimeout(() => {
+        setopt1(extra);
+        setprocess(0);
+      }, 1000);
     }
+
+    // else if (process === 0) {
+    //   setopt1(extra);
+    // }
+
+    return () => {
+      clearTimeout(proInt);
+    };
   }, [process]);
 
   return (
