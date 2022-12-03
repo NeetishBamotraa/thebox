@@ -186,7 +186,7 @@ font-family: 'Zen Dots', cursive; */
   left: 2vw;
   bottom: 10vh;
   padding: 5px 10px;
-  font-size: min(3vh,30px);
+  font-size: min(2vh,30px);
   color: white;
   border-radius: 8px;
   box-shadow: 0 0 10px 5px #3500d3;
