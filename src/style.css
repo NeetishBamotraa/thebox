@@ -41,6 +41,10 @@ font-family: 'Zen Dots', cursive; */
   box-shadow: 0 0 2px 6px #afd275;
 }
 
+.homebtn:hover {
+  box-shadow: 0 0 6px 6px #3500d3;
+}
+
 .main-style-bar-up {
   position: absolute;
   left: 0px;
@@ -186,7 +190,7 @@ font-family: 'Zen Dots', cursive; */
   left: 2vw;
   bottom: 10vh;
   padding: 5px 10px;
-  font-size: min(2vh,30px);
+  font-size: min(2vh, 30px);
   color: white;
   border-radius: 8px;
   box-shadow: 0 0 10px 5px #3500d3;
